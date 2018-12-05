@@ -9,3 +9,7 @@ https://github.com/requests/requests
 example program:
 https://github.com/zhuzhenpeng/PdfKit merging pdf, maybe we don't need it
 https://github.com/mHasanMalik/Gce-Guide-Pdf-Downloader
+
+
+git guide:
+https://guides.github.com/introduction/git-handbook/
