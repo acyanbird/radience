@@ -2,40 +2,56 @@
 <html>
 <head>
 <title>The GCEGUIDE pastpaper sercher</title>
-</head>>
+</head>
 <body>
   <script type="text/javascript">
     function changepapertype() {
-      if (document.getElementById("subject").value = computer science){
-        document.getElementById('type').remove();
-        document.getElementById('type').append('<option>--please choose--</option>'
-        +'<option value="1">1*</option>'
-        +'<option value="2">2*</option>'
-        +'<option value="3">3*</option>'
-        +'<option value="4">4*</option>');
+      var subjects=document.getElementById("subject");
+      var index=subjects.selectedIndex;
+      var types=document.getElementById("type");
+      if (subjects.options[index].value = "1"){
+        for (var i=2;i<types.length;i++){
+          types.remove(i);
+        }
+        var opta=document.createElement("option");
+        opta.text="1*";
+        opta.value="1";
+        types.add(opta,null);
+        var optb=document.createElement("option");
+        optb.text="2*";
+        optb.value="2";
+        types.add(optb,null);
+        var optc=document.createElement("option");
+        optc.text="3*";
+        optc.value="3";
+        types.add(optc,null);
+        var optd=document.createElement("option");
+        optd.text="4*";
+        optd.value="4";
+        types.add(optd,null);
       }
     };
   </script>
   <h1>pastpaper searcher(demo)</h1>
-  <form name="query" action="search result.html" method="submit">
-    subject:<select id="subject" onchange="hangepapertype()">
+  <form name="query" onsubmit="search result.html" method="post">
+    subject:<select id="subject" onchange="changepapertype()">
       <option>--please choose--</option>
-      <option value="computer science">Computer science</option>
-      <option value="none">retained</option>
+      <option value="1">Computer science</option>
+      <option value="0">retained</option>
     </select><br>
     year:<select id="year">
       <option>--please choose--</option>
       <option value="2018">2018</option>
-      <option value="all">all</option>
-      <option value="none">retained</option>
+      <option value="9999">all</option>
+      <option value="0">retained</option>
     </select><br>
     papertype:<select id="type">
       <option>--please choose--</option>
-      <option value="none">retained</option>
+      <option value="0">retained</option>
     </select><br>
     topic of question:<select id="topic">
       <option>--please choose--</option>
-      <option value="none">retained</option>
+      <option value="0">retained</option>
     </select><br>
     <button action='submit'>Search question</button>
   </form>
