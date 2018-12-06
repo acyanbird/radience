@@ -18,27 +18,28 @@
   </script>
   <h1>pastpaper searcher(demo)</h1>
   <form name="query" action="search result.html" method="submit">
-    subject:<select id="subject" onchange="hangepapertype()"><br>
+    subject:<select id="subject" onchange="hangepapertype()">
       <option>--please choose--</option>
       <option value="computer science">Computer science</option>
       <option value="none">retained</option>
-    </select>
-    year:<select id="year"><br>
+    </select><br>
+    year:<select id="year">
       <option>--please choose--</option>
       <option value="2018">2018</option>
       <option value="all">all</option>
       <option value="none">retained</option>
-    </select>
-    papertype:<select id="type"><br>
+    </select><br>
+    papertype:<select id="type">
       <option>--please choose--</option>
       <option value="none">retained</option>
-    </select>
-    topic of question:<select id="topic"><br>
+    </select><br>
+    topic of question:<select id="topic">
       <option>--please choose--</option>
       <option value="none">retained</option>
-    </select>
+    </select><br>
     <button action='submit'>Search question</button>
   </form>
-
+  <input type="button" class="downloadButton" value="download" />
+  <a href="url" class="downloadLink">Hyperlink</a>
 </body>
 </html>
