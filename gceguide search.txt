@@ -4,58 +4,65 @@
 <title>The GCEGUIDE pastpaper sercher</title>
 </head>
 <body>
-  <script type="text/javascript">
-    function changepapertype() {
-      var subjects=document.getElementById("subject");
-      var index=subjects.selectedIndex;
-      var types=document.getElementById("type");
-      if (subjects.options[index].value = "1"){
-        for (var i=2;i<types.length;i++){
-          types.remove(i);
-        }
-        var opta=document.createElement("option");
-        opta.text="1*";
-        opta.value="1";
-        types.add(opta,null);
-        var optb=document.createElement("option");
-        optb.text="2*";
-        optb.value="2";
-        types.add(optb,null);
-        var optc=document.createElement("option");
-        optc.text="3*";
-        optc.value="3";
-        types.add(optc,null);
-        var optd=document.createElement("option");
-        optd.text="4*";
-        optd.value="4";
-        types.add(optd,null);
-      }
-    };
-  </script>
-  <h1>pastpaper searcher(demo)</h1>
-  <form name="query" onsubmit="search result.html" method="post">
-    subject:<select id="subject" onchange="changepapertype()">
-      <option>--please choose--</option>
-      <option value="1">Computer science</option>
-      <option value="0">retained</option>
-    </select><br>
-    year:<select id="year">
-      <option>--please choose--</option>
-      <option value="2018">2018</option>
-      <option value="9999">all</option>
-      <option value="0">retained</option>
-    </select><br>
-    papertype:<select id="type">
-      <option>--please choose--</option>
-      <option value="0">retained</option>
-    </select><br>
-    topic of question:<select id="topic">
-      <option>--please choose--</option>
-      <option value="0">retained</option>
-    </select><br>
-    <button action='submit'>Search question</button>
-  </form>
-  <input type="button" class="downloadButton" value="download" />
-  <a href="url" class="downloadLink">Hyperlink</a>
+	<script type="text/javascript">
+		var papertypes={};
+		papertypes['0']=['retained'];
+		papertypes['1']=['1*','2*','3*','4*'];
+		var subjecttopics={};
+		subjecttopics['0']=['retained'];
+		subjecttopics['1']=['theory fundamentals','fundamental problem-solving and programming skills','advanced theory','further problem-solving and programming skills'];
+		function change() {
+			var subjects=document.getElementById("subject");
+			var index=subjects.selectedIndex;
+			var types=document.getElementById("type");
+			while(types.options.length-1){
+				types.remove(1);
+			}
+			var papers=papertypes[subjects.options[index].value];
+			if (papers){
+				for (var i = 0; i < papers.length; i++){
+					var paper=new Option(papers[i],i+1);
+					types.options.add(paper);
+				}
+			}
+			var topic=document.getElementById("part");
+			while (topic.options.length-1) {
+				topic.remove(1);
+			}
+			var topics=subjecttopics[subjects.options[index].value];
+			if (topics) {
+				for (var i = 0; i < topics.length; i++) {
+					var top=new Option(topics[i],i+1);
+					topic.options.add(top);
+				}
+			}
+		};
+	</script>
+	<h1>pastpaper searcher(demo)</h1>
+	<form name="query" onsubmit="search result.html" method="post">
+		subject:<select id="subject" onchange="change()">
+			<option>--please choose--</option>
+			<option value="1">Computer science</option>
+			<option value="0">retained</option>
+		</select><br>
+		year:<select id="year">
+			<option>--please choose--</option>
+			<option value="2018">2018</option>
+			<option value="9999">all</option>
+			<option value="0">retained</option>
+		</select><br>
+		papertype:<select id="type">
+			<option>--please choose--</option>
+			<option value="0">retained</option>
+		</select><br>
+		topic of question:<select id="part">
+			<option>--please choose--</option>
+			<option value="0">retained</option>
+		</select>
+		<input typw="text" name="chapter"><br>
+		<button action='submit'>Search question</button>
+	</form>
+	<input type="button" class="downloadButton" value="download" />
+	<a href="url" class="downloadLink">Hyperlink</a>
 </body>
 </html>
