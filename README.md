@@ -13,3 +13,6 @@ https://github.com/mHasanMalik/Gce-Guide-Pdf-Downloader
 
 git guide:
 https://guides.github.com/introduction/git-handbook/
+
+pastpaper of cs:https://pan.baidu.com/s/1ZUF1bggnat6RS4mUZf3Lgg<br>
+too large to upload
