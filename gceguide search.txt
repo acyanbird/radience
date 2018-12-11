@@ -39,6 +39,7 @@
 		};
 	</script>
 	<h1>pastpaper searcher(demo)</h1>
+	<img src="logo.png" alt="logo is here">
 	<form name="query" onsubmit="search result.html" method="post">
 		subject:<select id="subject" onchange="change()">
 			<option>--please choose--</option>
