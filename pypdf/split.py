@@ -22,9 +22,9 @@ def find_question(location):
 
 
 def creat_new_folder(new, inside):
-    needed = inside + "\\" + new
-    if not os.path.exists(needed):
-        os.makedirs(needed)
+    if not os.path.exists(os.path.join(inside, new)):
+        os.makedirs(os.path.join(inside, new))
+    return os.path.join(inside, new)
 
 
 def cutting(paper):
@@ -40,15 +40,17 @@ def cutting(paper):
     for page in range(starts[len(starts)][0], source.numPages):
         tem.addPage(source.getPage(page))
     output.append(tem)
-
-
+    return output
 
 
 path = "cs"
-year = []
-for dir_names in os.walk(path):
-    year.extend(dir_names)
-    break
-
-
-
+output_path = "result"
+years = os.listdir(path)
+for year in years:
+    result_year = creat_new_folder(year, output_path)
+    for paper in os.listdir(os.path.join(path, year)):
+        questions = cutting(os.path.join(os.path.join(path, year), paper))
+        creat_new_folder(paper, result_year)
+        for index in range(len(questions)):
+            name = output_path + str(index + 1)
+            questions[index].write(name)
