@@ -1,69 +1,36 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>The GCEGUIDE pastpaper sercher</title>
-</head>
-<body>
-	<script type="text/javascript">
-		var papertypes={};
-		papertypes['0']=['retained'];
-		papertypes['1']=['1*','2*','3*','4*'];
-		var subjecttopics={};
-		subjecttopics['0']=['retained'];
-		subjecttopics['1']=['theory fundamentals','fundamental problem-solving and programming skills','advanced theory','further problem-solving and programming skills'];
-		function change() {
-			var subjects=document.getElementById("subject");
-			var index=subjects.selectedIndex;
-			var types=document.getElementById("type");
-			while(types.options.length-1){
-				types.remove(1);
-			}
-			var papers=papertypes[subjects.options[index].value];
-			if (papers){
-				for (var i = 0; i < papers.length; i++){
-					var paper=new Option(papers[i],i+1);
-					types.options.add(paper);
-				}
-			}
-			var topic=document.getElementById("part");
-			while (topic.options.length-1) {
-				topic.remove(1);
-			}
-			var topics=subjecttopics[subjects.options[index].value];
-			if (topics) {
-				for (var i = 0; i < topics.length; i++) {
-					var top=new Option(topics[i],i+1);
-					topic.options.add(top);
-				}
-			}
-		};
-	</script>
-	<h1>pastpaper searcher(demo)</h1>
-	<img src="logo.png" alt="logo is here">
-	<form name="query" onsubmit="search result.html" method="post">
-		subject:<select id="subject" onchange="change()">
-			<option>--please choose--</option>
-			<option value="1">Computer science</option>
-			<option value="0">retained</option>
-		</select><br>
-		year:<select id="year">
-			<option>--please choose--</option>
-			<option value="2018">2018</option>
-			<option value="9999">all</option>
-			<option value="0">retained</option>
-		</select><br>
-		papertype:<select id="type">
-			<option>--please choose--</option>
-			<option value="0">retained</option>
-		</select><br>
-		topic of question:<select id="part">
-			<option>--please choose--</option>
-			<option value="0">retained</option>
-		</select>
-		<input typw="text" name="chapter"><br>
-		<button action='submit'>Search question</button>
-	</form>
-	<input type="button" class="downloadButton" value="download" />
-	<a href="url" class="downloadLink">Hyperlink</a>
+ 
+    <html>
+ 
+    <head>
+ 
+    <title>The GCEGUIDE pastpaper sercher</title>
+ 
+    </head>
+ 
+    <body style="background-color:AliceBlue">
+    <h1 style="text-align:center;font-family:Candara;">Pastpaper searcher(demo)</h1>
+ 
+    < img src="logo.png" alt="logo is here">
+ 
+<p>Click on links below for relative topicsღ( ´･ᴗ･` )<p>
+ 
+<p>1.< a href=" ">Information representation</ a></p > 
+        <p>2.< a href="Software">Software</ a></p >
+        <p>3.< a href="Hardware">Hardware</ a></p >
+        <p>4.< a href="Logic gates and logic circuits">Logic gates and logic circuits</ a></p >
+    <p>5.< a href="Communication and Internet technologies">Communication and Internet technologies</ a></p >
+        <p>6.< a href="Processor fundamentals">Processor fundamentals</ a></p >
+        <p>7.< a href="Algorithm design and problem solving">Algorithm design and problem solving</ a></p >
+        <p>8.< a href="Pseudocode">Pseudocode</ a></p >
+        <p>9.< a href="Flowchart">Flowchart</ a></p >
+        <p>10.< a href="Structure charts">Structure charts</ a></p >
+        <p>11.< a href="File handling">File handling</ a></p >
+        <p>12.< a href="Programing">Programing</ a></p >
+<p>13.< a href="Advanced Therory">Advanced Therory</ a></p >
+<p>14.< a href="Further skills">Further skills</ a></p >
+ 
 </body>
+ 
+ 
 </html>
